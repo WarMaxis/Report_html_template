@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asset Extraction Report</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 15px;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+        
+        .main_container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        
+        .main_section,
+        .sections {
+            padding-bottom: 40px;
+            border-bottom: 1px solid #555555;
+            position: relative;
+        }
+        
+        .sections:last-child {
+            border-bottom: none;
+        }
+        
+        .main_section h1 {
+            margin-bottom: 35px;
+        }
+        
+        .main_section img {
+            max-width: calc(100% - 80px);
+            margin: 0 40px;
+            border: 3px solid #555555;
+        }
+        
+        .sections h2 {
+            font-weight: normal;
+        }
+        
+        .descriptions {
+            font-size: 12px;
+        }
+        
+        .results_container {
+            margin-top: 50px;
+            margin-left: 10%;
+        }
+        
+        .results {
+            font-size: 30px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .results_text {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .gender,
+        .hair-color,
+        .skin-tone,
+        .apparel,
+        .ethnicity,
+        .emotions,
+        .age,
+        .adult,
+        .spoof,
+        .medical,
+        .violence {
+            margin-top: 40px;
+        }
+        
+        .small-image_container {
+            margin-top: 20px;
+            display: inline-block;
+            width: 30%;
+        }
+        
+        .small-image_container img {
+            max-width: 90%;
+            border: 3px solid #555555;
+        }
+        
+        .small-image_container span {
+            margin-top: 20px;
+            display: block;
+            color: #169BD5;
+        }
+        
+        .indicator {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            border: 1px solid #000000;
+            border-radius: 50%;
+        }
+        
+        .true {
+            background-color: limegreen;
+        }
+        
+        .main_img_description {
+            max-width: calc(100% - 120px);
+            margin: 0 40px;
+        }
+        
+        .main_img_description .descriptions {
+            display: inline-block;
+            width: 60%;
+        }
+        
+        .main_img_description .link {
+            display: inline-block;
+            width: 39%;
+            font-size: 12px;
+            text-align: right;
+        }
+        
+        .main_img_description a {
+            text-decoration: none;
+            color: #169BD5;
+        }
+        
+        .results_charts_container {
+            max-width: 90%;
+        }
+        
+        .results-chart {
+            height: 40px;
+            width: 100%;
+        }
+        
+        .colors {
+            float: left;
+        }
+        
+        .percent {
+            float: right;
+        }
+        
+        .clearfix {
+            clear: both;
+            height: 1px;
+        }
+        
+        @media screen and (max-width: 786px) {
+            .main_img_description .link {
+                display: block;
+                text-align: left;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .colors,
+            .percent {
+                float: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="main_container">
+
+
+        <div class="main_section">
+            <div class="indicator"></div>
+
+            <h1>Asset Extraction Report</h1>
+
+            <img src="img_example.png">
+
+            <div class="main_img_description">
+                <p class="descriptions">Extraction results can be seen also in BrandStore.</p>
+
+                <p class="link">
+                    <a href="#">Navigate to BrandStore</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="brand-value_section sections">
+            <div class="indicator true"></div>
+
+            <h2>Brand Value Extraction</h2>
+
+            <p class="descriptions">This scenario extracts information about brand visible on asset by recognizing logo even without text.</p>
+
+            <div class="results_container">
+                <span class="results">Puffs</span>
+
+                <p class="descriptions">Recognized brand</p>
+            </div>
+        </div>
+
+        <div class="text-and-language_section sections">
+            <div class="indicator true"></div>
+
+            <h2>Text and Language Detection</h2>
+
+            <p class="descriptions">This scenario extracts all text in any language visible on asset.</p>
+
+            <div class="results_container">
+                <span class="results">English</span>
+
+                <p class="descriptions">Recognized language on asset</p>
+
+                <p class="results_text">PROTECTS SORE NOSES BY LOCKING IN MOISTURE LEADING REGULAR TISSUE ATOLO OLOG Plus Lotion ESTED TM</p>
+            </div>
+        </div>
+
+        <div class="extraction-of-demographics_section sections">
+            <div class="indicator"></div>
+
+            <h2>Extraction of Demographics</h2>
+
+            <p class="descriptions">This scenario extract demographic attributes from assets - information if people are on asset, gender, skin tone, appareals, is any face visible on asset.</p>
+
+            <div class="results_container">
+                <span class="is-face results">Face was detected on this asset</span>
+
+                <div>
+                    <span class="gender results">Female</span>
+                    <p class="descriptions">Recognized gender</p>
+                </div>
+
+                <div>
+                    <span class="hair-color results">Brown</span>
+                    <p class="descriptions">Recognized hair color</p>
+                </div>
+
+                <div>
+                    <span class="skin-tone results">15/30</span>
+                    <p class="descriptions">Skin tone (1 - white / 30 - black)</p>
+                </div>
+
+                <div>
+                    <span class="apparel results">Earring, Necklace, Former Dress</span>
+                    <p class="descriptions">Recognized apparel</p>
+                </div>
+
+                <div>
+                    <span class="ethnicity results">Hispanic, latino, or spanish origin</span>
+                    <p class="descriptions">Ethnicity</p>
+                </div>
+
+                <div>
+                    <span class="emotions results">Joy, suprise</span>
+                    <p class="descriptions">Emotions</p>
+                </div>
+
+                <div>
+                    <span class="age results">25</span>
+                    <p class="descriptions">Age</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gtin-code_section sections">
+            <div class="indicator true"></div>
+
+            <h2>GTIN code extraction</h2>
+
+            <p class="descriptions">This code extracts GTIN code if it appears on asset.</p>
+
+            <div class="results_container">
+                <span class="results">GTIN code does not appear on asset</span>
+            </div>
+        </div>
+
+        <div class="potential-duplicates_section sections">
+            <div class="indicator true"></div>
+
+            <h2>Reduction of Potential Duplicates</h2>
+
+            <p class="descriptions">This scenario links assets that are duplicated or contain similar objects (logo, face, text, etc.)</p>
+
+            <div>
+                <div class="small-image_container">
+                    <img src="img_small_example.png">
+
+                    <span class="img-id">#2789245</span>
+                </div>
+
+                <div class="small-image_container">
+                    <img src="img_small_example.png">
+
+                    <span class="img-id">#38496254</span>
+                </div>
+
+                <div class="small-image_container">
+                    <img src="img_small_example.png">
+
+                    <span class="img-id">#59147893</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="labels-extraction_section sections">
+            <div class="indicator true"></div>
+
+            <h2>Labels Extraction</h2>
+
+            <p class="descriptions">This scenario extracts labels visible on asset.</p>
+
+            <div class="results_container">
+                <div>
+                    <span class="results">Sports, Team sport, Games, Player, Ball Game, Competition, Stick and ball games, Fun, Grass</span>
+                    <p class="descriptions">Detected labels</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dominant-colors-extraction_section sections">
+            <div class="indicator true"></div>
+
+            <h2>Dominant Colors Extraction</h2>
+
+            <p class="descriptions">This scenario extracts dominant colors visible on asset.</p>
+
+            <div class="results_container">
+                <div class="results_charts_container">
+                    <div class="results-chart" style="width: 100%; background-color: #34331A;"></div>
+
+                    <p class="descriptions colors">
+                        <span>#34331A</span>, RGB <span>(52, 51, 26)</span>
+                    </p>
+
+                    <p class="descriptions percent">
+                        <span>100%</span>
+                    </p>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="results_charts_container">
+                    <div class="results-chart" style="width: 13%; background-color: #1B43C0;"></div>
+
+                    <p class="descriptions colors">
+                        <span>#1B43C0</span>, RGB <span>(27, 67, 192)</span>
+                    </p>
+
+                    <p class="descriptions percent">
+                        <span>13%</span>
+                    </p>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="results_charts_container">
+                    <div class="results-chart" style="width: 50%; background-color: rgb(255,0,0);"></div>
+
+                    <p class="descriptions colors">
+                        <span>#2E4DA2</span>, RGB <span>(255, 0, 0)</span>
+                    </p>
+
+                    <p class="descriptions percent">
+                        <span>50%</span>
+                    </p>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explicit-content-verification_section sections">
+            <div class="indicator"></div>
+
+            <h2>Explicit Content Verification</h2>
+
+            <p class="descriptions">This scenario verifies if explicint content occurs on asset.</p>
+
+            <div class="results_container">
+                <div>
+                    <span class="adult results">Very Unlikely</span>
+                    <p class="descriptions">Adult</p>
+                </div>
+
+                <div>
+                    <span class="spoof results">Unlikely</span>
+                    <p class="descriptions">Spoof</p>
+                </div>
+
+                <div>
+                    <span class="medical results">Likely</span>
+                    <p class="descriptions">Medical</p>
+                </div>
+
+                <div>
+                    <span class="violence results">Very Likely</span>
+                    <p class="descriptions">Violence</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
